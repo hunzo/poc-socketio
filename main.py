@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO, send, emit
+from flask_socketio import SocketIO, emit
 
 from datetime import datetime
 
@@ -23,7 +23,7 @@ def fx_brodcasting(message):
     print(f'message brodcasting: {message}')
 
     emit('brodcast', {
-        "message": f"Brodcasting message @{datetime.now()}"
+        "message": f"Brodcasting message: {message['data']} @{datetime.now()}"
     }, broadcast=True)
 
 
@@ -31,5 +31,5 @@ def fx_brodcasting(message):
 def my_event(message):
     print(message)
     emit('my_response', {
-        "message": f"response message from click @{datetime.now()}"
+        "message": f"Respone message: {message['data']} @{datetime.now()}"
     })

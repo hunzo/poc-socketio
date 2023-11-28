@@ -18,16 +18,26 @@ sio.on("my_response", (message) => {
   msg.innerText = message.message
 })
 
-const push_brodcasting = () => {
-  console.log("push brodcasting")
-  sio.emit("my_brodcasting", {
-    "data": "push_brodcasting from frontend",
-  })
-}
+form = document.getElementById("my-form")
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
 
-const push_event = () => {
-  console.log("push event")
   sio.emit("my_event", {
-    "data": "push_event from frontend",
+    "data": e.target[0].value,
   })
-}
+
+  e.target[0].value = ""
+})
+
+bcform = document.getElementById("my-brodcast")
+bcform.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  // console.log(e.target[0].value)
+
+  sio.emit("my_brodcasting", {
+    "data": e.target[0].value,
+  })
+
+  e.target[0].value = ""
+})

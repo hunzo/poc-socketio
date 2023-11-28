@@ -7,18 +7,27 @@
   </head>
   <body>
     <h1>Test APP Socketio</h1>
-    <button type="submit" onclick="push_event()">click</button>
-    <button type="submit" onclick="push_brodcasting()">brodcasting</button>
+    <form id="my-form">
+      Enter message:
+      <input type="text" name="somename">
+      <button type="submit" id="event-btn">submit</button>
+    </form>
     
+    <form id="my-brodcast" style="margin-top: 1rem;">
+      Enter Brodcat message:
+      <input type="text" name="somename">
+      <button type="submit" id="brodcast-btn">submit</button>
+    </form>
+
+
     <div id="brodcast-message" style="margin-top: 1rem;"></div>
-    
+
     <ul>
       <li>{{ data.status }}</li>
       <li>{{ data.message }}</li>
     </ul>
-
+   
     <div id="my_response-message" style="margin-top: 1rem;"></div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
     <script src="{{ url_for('static', filename='js/index.js')}}"></script>
   </body>
