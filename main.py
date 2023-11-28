@@ -31,5 +31,5 @@ def fx_brodcasting(message):
 def my_event(message):
     print(message)
     emit('my_response', {
-        "message": "response message from click"
+        "message": f"response message from click @{datetime.now()}"
     })
