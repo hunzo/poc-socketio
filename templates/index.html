@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Example socketio</h1>
+    <button type="submit" onclick="push_event()">click</button>
+    <ul>
+      <li>{{ data.status }}</li>
+      <li>{{ data.message }}</li>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js')}}"></script>
+  </body>
+</html>
