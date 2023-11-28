@@ -8,6 +8,10 @@
   <body>
     <h1>Test APP Socketio</h1>
     <button type="submit" onclick="push_event()">click</button>
+    <button type="submit" onclick="push_brodcasting()">brodcasting</button>
+    
+    <div id="bc" style="margin-top: 1rem;"></div>
+    
     <ul>
       <li>{{ data.status }}</li>
       <li>{{ data.message }}</li>
